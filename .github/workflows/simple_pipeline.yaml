@@ -6,8 +6,8 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps: 
-      - name: echoes a string
-        run: echo "Hello, there"
+      - name: echoes a string; this should now fail!
+        run: eccho "Hello, there"
       - name:  multiline script 
         run: |
           node -v
