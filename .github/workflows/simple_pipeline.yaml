@@ -20,13 +20,13 @@ jobs:
 
   run-shell-command-on-windows:
     runs-on: windows-latest
+    needs: [run-shell-command]
     steps:
-      - name: creates a directory
-        run: mkdir a_directory
-      - name: cds into the directory
-        run: cd a_directory
-      - name: gets the location
-        run: Get-Location
+      - name: creates a directory and does stuff
+        run:  |
+         mkdir a_directory
+         cd a_directory
+         Get-Location
       - name: run same in bash
         run: pwd
         shell: bash
