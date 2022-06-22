@@ -6,7 +6,7 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps: 
-      - name: echoes a string; this should now fail!
+      - name: echoes a string
         run: echo "Hello, there"
       - name:  multiline script 
         run: |
@@ -17,3 +17,16 @@ jobs:
           import platform
           print(f"Running on {platform.processor()}")
         shell: python
+
+  run-shell-command-on-windows:
+    runs-on: windows-latest
+    steps:
+      - name: creates a directory
+        run: mkdir a_directory
+      - name: cds into the directory
+        run: cd a_directory
+      - name: gets the location
+        run: Get-Location
+      - name: run same in bash
+        run: pwd
+        shell: bash
