@@ -15,5 +15,5 @@ jobs:
       - name: python script
         run: |
           import platform
-          print(f"Running on {paltform.processor()}")
+          print(f"Running on {platform.processor()}")
         shell: python
