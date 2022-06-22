@@ -13,3 +13,9 @@ jobs:
           who-to-greet: Meeee
       - name: Log Greeting time
         run: echo "${{steps.greet.outputs.time}}"
+      - name: list files before checkout
+        run: ls -a
+      - name: check out branch
+        uses: actions/checkout@v1
+      - name: list files after checkout
+        run: ls -a 
