@@ -7,8 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: echoes a string; this should now fail!
-        run: eccho "Hello, there"
+        run: echo "Hello, there"
       - name:  multiline script 
         run: |
           node -v
           npm -v
+      - name: python script
+        run: |
+          import platform
+          print(f"Running on {paltform.processor()}")
+        shell: python
