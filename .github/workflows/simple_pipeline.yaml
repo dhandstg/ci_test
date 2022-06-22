@@ -20,7 +20,7 @@ jobs:
 
   run-shell-command-on-windows:
     runs-on: windows-latest
-    needs: [run-shell-command]
+    needs: ["run-shell-command"]
     steps:
       - name: creates a directory and does stuff
         run:  |
