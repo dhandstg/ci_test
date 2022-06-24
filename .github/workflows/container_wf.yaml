@@ -1,0 +1,16 @@
+name: Container-Workflow
+
+on:
+  - push
+
+jobs:
+  first-container-job:
+    runs-on: ubuntu-latest
+    container: 
+      image: node:14-alpine3.15
+    steps:
+      - name: log version of container
+        run: |
+          node -v
+          cat /etc/os-release
+      

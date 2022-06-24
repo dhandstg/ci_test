@@ -3,7 +3,7 @@ name: Functions
 on:
   push:
     branches:
-      - develop
+      - '!develop'
 
 jobs:
   first_job:
@@ -26,7 +26,7 @@ jobs:
       - name: one more conditional step
         if: success()
         run: echo "I should not run!"
-  matrix_seocond_job:
+  matrix_second_job:
     runs-on: ubuntu-latest
     strategy:
       matrix:
