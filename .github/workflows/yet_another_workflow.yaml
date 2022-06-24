@@ -21,6 +21,8 @@ jobs:
       - name: second conditional step
         if: always()
         run: echo "I should always run!!"
+      - name: another intentional failure
+        run: eccho "Mannnn, again 2 c's?"
       - name: one more conditional step
         if: failure()
         run: echo "I should not run!"
