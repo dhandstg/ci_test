@@ -26,3 +26,16 @@ jobs:
       - name: one more conditional step
         if: success()
         run: echo "I should not run!"
+  matrix_seocond_job:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        a_number:
+          - 10
+          - 18
+          - 16
+          - 25
+          - 28
+    steps:
+      - name: prints a number
+        run: echo "${{matrix.a_number}}"
