@@ -1,0 +1,23 @@
+name: Functions
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: current location in agent
+        run: |
+          echo "we are in "
+          pwd
+      - name: failed step
+        run: eccho "this will not run; echo with 2 c's??"
+      - name: first conditional step
+        if: failure()
+        run: echo "The previous step failed but I ran"
+      - name: second conditional step
+        if: always()
+        run: echo "I should always run!!"
